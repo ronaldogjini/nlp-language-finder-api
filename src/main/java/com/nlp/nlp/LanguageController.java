@@ -16,6 +16,18 @@ public class LanguageController {
     @PostMapping("/language")
     public Text calculateLanguage(@RequestBody String text) {
         String languageFound = NLPMain.findLanguage(text);
-        return new Text(languageFound);
+        if (languageFound == "en") {
+            return new Text("English");
+        } else if (languageFound == "de") {
+            return new Text("German");
+        } else if (languageFound == "fr") {
+            return new Text("French");
+        } else if (languageFound == "it") {
+            return new Text("Italian");
+        } else if (languageFound == "Ru") {
+            return new Text("Russian");
+        }
+        return new Text("Write more");
+
     }
 }
