@@ -12,7 +12,7 @@ public class LanguageController {
         return new Language("hellooooo");
     }
 
-
+    @CrossOrigin(origins = "http://localhost:8000")
     @PostMapping("/language")
     public Text calculateLanguage(@RequestBody String text) {
         String languageFound = NLPMain.findLanguage(text);
