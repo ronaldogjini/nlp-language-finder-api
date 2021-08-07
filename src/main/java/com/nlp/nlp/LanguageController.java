@@ -3,31 +3,29 @@ package com.nlp.nlp;
 import languageGenerator.NLPMain;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @RestController
 public class LanguageController {
-
-    @CrossOrigin
-    @GetMapping("/languages")
-    public Language calculateLanguages() {
-        return new Language("hellooooo");
-    }
 
     @CrossOrigin
     @PostMapping("/language")
     public Text calculateLanguage(@RequestBody String text) {
         String languageFound = NLPMain.findLanguage(text);
-        if (languageFound.equals("en")) {
-            return new Text("English");
-        } else if (languageFound.equals("de")) {
-            return new Text("German");
-        } else if (languageFound.equals("fr")) {
-            return new Text("French");
-        } else if (languageFound.equals("it")) {
-            return new Text("Italian");
-        } else if (languageFound.equals("ru")) {
-            return new Text("Russian");
-        }
-        return new Text(languageFound);
+        Map<String, String> map = new HashMap<>();
+
+        map.put("en", "English");
+        map.put("fr", "French");
+        map.put("it", "Italian");
+        map.put("es", "Spanish");
+        map.put("ru", "Russian");
+        map.put("jp1", "Japanese");
+        map.put("nl", "Dutch");
+        map.put("pt", "Portuguese");
+        map.put("gr", "Greek");
+
+        return new Text(map.get(languageFound));
 
     }
 }

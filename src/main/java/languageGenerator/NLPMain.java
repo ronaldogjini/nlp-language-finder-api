@@ -50,8 +50,9 @@ public class NLPMain {
         // wait for the threads to finish, then execute the following streams
         try {
             if (executorService.awaitTermination(20, TimeUnit.SECONDS)) {
+
                 allModels.entrySet().stream()
-                        .forEach(entry -> System.out.println(entry));
+                        .forEach(entry -> System.out.println(entry.getValue()));
 
                 System.out.println("Mystery Text: " + mysteryTextModel);
 
