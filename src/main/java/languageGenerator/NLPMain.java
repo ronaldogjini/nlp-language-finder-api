@@ -34,7 +34,6 @@ public class NLPMain {
                             executorService.execute(new FolderThread(p, userNGram, allModels));
                         }
                         else if (Files.isRegularFile(p) && !p.equals(userPath)) {
-                            System.out.println("WE AREE HERE");
                             System.out.println(p);
 
                             executorService.execute(new FileThread(text, userNGram, mysteryTextModel));

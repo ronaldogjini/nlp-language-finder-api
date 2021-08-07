@@ -24,6 +24,7 @@ public class LanguageController {
         map.put("nl", "Dutch");
         map.put("pt", "Portuguese");
         map.put("gr", "Greek");
+        map.put("de", "German");
 
         return new Text(map.get(languageFound));
 
