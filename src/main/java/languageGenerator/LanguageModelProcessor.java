@@ -57,7 +57,6 @@ public class LanguageModelProcessor {
     public static synchronized Map<String, Long> getLanguageModelMystery(String text, int ngram) throws IOException {
 
         Map<String, Long> fileLanguageModel = new HashMap<>();
-
             Pattern pattern = Pattern.compile("\\s+");
 
         List<String> listString = text.lines()
