@@ -1,4 +1,4 @@
-package com.nlp.controller;
+package com.nlp.nlp;
 
 import languageGenerator.NLPMain;
 import org.springframework.web.bind.annotation.*;

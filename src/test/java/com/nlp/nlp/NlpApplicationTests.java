@@ -1,4 +1,4 @@
-package com.nlp.controller;
+package com.nlp.nlp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

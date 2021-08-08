@@ -1,4 +1,4 @@
-package com.nlp.controller;
+package com.nlp.nlp;
 
 public class Text {
 
